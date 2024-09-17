@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conor Lee Portfolio</title>
+  <link rel="stylesheet" href="/src/index.css" />
+  <style>
+    /* Attempt to hide the elements as soon as possible */
+    #video-detach-button.custom-button,
+    div.image::after {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      overflow: hidden !important;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Your main React application script -->
+  <script type="module" src="/src/index.jsx"></script>
+
+  <!-- Inline JavaScript for aggressive removal -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      function removeElements() {
+        const detachButton = document.querySelector('#video-detach-button.custom-button');
+        const imageAfter = document.querySelector('div.image::after');
+
+        if (detachButton) {
+          detachButton.style.display = 'none';
+          detachButton.parentNode.removeChild(detachButton);  // Remove from DOM
+        }
+
+        if (imageAfter) {
+          imageAfter.style.display = 'none';
+          if (imageAfter.parentNode) {
+            imageAfter.parentNode.removeChild(imageAfter);  // Attempt to remove parent node
+          }
+        }
+      }
+
+      // Run the function once on load
+      removeElements();
+
+      // Monitor the DOM for changes and remove the elements if they appear
+      const observer = new MutationObserver(removeElements);
+      observer.observe(document.body, { childList: true, subtree: true });
+
+      // Aggressive approach: Continuously check every 100ms
+      setInterval(removeElements, 100);
+    });
+  </script>
+</body>
+</html>

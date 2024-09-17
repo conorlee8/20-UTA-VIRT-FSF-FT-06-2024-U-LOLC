@@ -1,0 +1,30 @@
+.header {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .nav-bar {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    font-family: 'Nikea', sans-serif;
+  }
+  
+  .nav-link img {
+    width: 24px;
+    margin-right: 8px;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+  

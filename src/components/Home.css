@@ -1,0 +1,9 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Adjust as needed */
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Adjust as needed */
+  padding: 20px; /* Adjust as needed */
+}

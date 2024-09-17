@@ -1,0 +1,127 @@
+/* index.css */
+
+/* Import the Blaster font */
+@font-face {
+    font-family: 'Blaster';
+    src: url('./assets/fonts/BlasterFont-Demo.otf') format('opentype');
+  }
+  
+  /* Import the Skyer font (assuming Skyer is the same as Nikea) */
+  @font-face {
+    font-family: 'Skyer';
+    src: url('./assets/fonts/Skyer-TrialVersion.otf') format('opentype');
+  }
+  
+  /* Apply the galaxy background image to the entire application */
+  body {
+    margin: 0;
+    font-family: 'Skyer', Arial, sans-serif; /* Apply Skyer/Nikea font with fallback */
+    background-image: url('./assets/images/galaxyBackground.jpg'); /* Path to the galaxy background */
+    background-size: cover; /* Ensure the background covers the entire page */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-position: center center; /* Center the background */
+    min-height: 100vh; /* Ensure the background covers at least the full height of the viewport */
+    display: flex;
+    flex-direction: column; /* Flexbox to align footer to bottom */
+    color: #ffffff; /* Make all general text white */
+  }
+  
+  /* Specifically apply the Blaster font to h1 elements and ensure the text is white */
+  h1 {
+    font-family: 'Blaster', Arial, sans-serif; /* Apply Blaster font with fallback */
+    color: #ffffff !important; /* Ensure h1 text is white, with !important to override any other styles */
+    background-color: transparent !important; /* Ensure h1 background is fully transparent */
+    padding: 0; /* Remove padding if any is present */
+    margin: 0; /* Remove margin if any is present */
+  }
+  
+  /* Ensure all other text elements are white */
+  h2, h3, h4, h5, h6, p, a, span, div, li, header, footer {
+    color: #ffffff;
+  }
+  
+  /* Navigation bar styling */
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background matching the body */
+    padding: 10px;
+    border-radius: 0; /* Remove rounded corners for a full-width header */
+    box-shadow: none; /* Remove shadow if present */
+    width: 100%; /* Ensure the navbar spans the full width */
+    border-bottom: 2px solid white; /* Adds a white border at the bottom like the footer */
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* Adjust spacing */
+  }
+  
+  .navbar li {
+    margin: 0 10px;
+  }
+  
+  .navbar a {
+    display: flex; /* Aligns the icon and text horizontally */
+    align-items: center; /* Centers icon and text vertically */
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    font-family: 'Skyer', Arial, sans-serif;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  }
+  
+  .navbar a img {
+    width: 24px; /* Adjust size as needed */
+    height: 24px;
+    margin-right: 8px; /* Space between icon and text */
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  .navbar a:hover {
+    transform: scale(1.1);
+    animation: bounce 0.5s ease-in-out;
+  }
+  
+  /* Footer styling */
+  footer {
+    text-align: center; /* Centers the text horizontally */
+    padding: 10px 0; /* Adds some padding above and below the text */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background matching the header */
+    color: white; /* Ensures the text is white */
+    position: absolute; /* Locks the footer to the bottom of the page */
+    width: 100%; /* Ensures the footer spans the full width */
+    bottom: 0; /* Locks the footer to the bottom */
+    border-radius: 0; /* Remove rounded corners */
+    border-top: 2px solid white; /* Adds a white border on top */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Adds a glowing effect */
+  }
+  
+  /* Body content box with border, padding, and space-age effect */
+  .content-container {
+    flex: 1; /* Allows the container to grow and take up available space */
+    padding: 20px; /* Adjust padding as needed */
+    margin: 20px auto; /* Centers the container with margin on top and bottom */
+    max-width: 900px; /* Decrease the maximum width of the container */
+    border: 5px solid white; /* Adds a solid white border around the container */
+    border-radius: 15px; /* Adds rounded corners for a space-age effect */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Adds a glowing effect */
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  }
+  
